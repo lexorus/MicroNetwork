@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B19BDB81242E0AD9008F8DF0 /* MicroNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB7E242E0AD9008F8DF0 /* MicroNetworkTests.swift */; };
+		B19BDB85242E3DA4008F8DF0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB84242E3DA4008F8DF0 /* Network.swift */; };
+		B19BDB87242E3DC8008F8DF0 /* NetwrokError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB86242E3DC8008F8DF0 /* NetwrokError.swift */; };
+		B19BDB89242E3DF3008F8DF0 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB88242E3DF3008F8DF0 /* NetworkTask.swift */; };
+		B19BDB8D242E3EF4008F8DF0 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB8C242E3EF4008F8DF0 /* IntExtensions.swift */; };
+		B19BDB90242E3F49008F8DF0 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BDB8F242E3F49008F8DF0 /* IntExtensionsTests.swift */; };
 		B1BFE2B6242E08DF00C9CC97 /* MicroNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFE2AC242E08DF00C9CC97 /* MicroNetwork.framework */; };
 		B1BFE2BD242E08DF00C9CC97 /* MicroNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BFE2AF242E08DF00C9CC97 /* MicroNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -23,8 +27,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B19BDB7E242E0AD9008F8DF0 /* MicroNetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicroNetworkTests.swift; sourceTree = "<group>"; };
 		B19BDB80242E0AD9008F8DF0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19BDB84242E3DA4008F8DF0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		B19BDB86242E3DC8008F8DF0 /* NetwrokError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokError.swift; sourceTree = "<group>"; };
+		B19BDB88242E3DF3008F8DF0 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		B19BDB8C242E3EF4008F8DF0 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		B19BDB8F242E3F49008F8DF0 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		B1BFE2AC242E08DF00C9CC97 /* MicroNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MicroNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BFE2AF242E08DF00C9CC97 /* MicroNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroNetwork.h; sourceTree = "<group>"; };
 		B1BFE2B0242E08DF00C9CC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 		B19BDB7D242E0AD9008F8DF0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B19BDB7E242E0AD9008F8DF0 /* MicroNetworkTests.swift */,
+				B19BDB8E242E3F31008F8DF0 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -73,6 +81,41 @@
 				B19BDB80242E0AD9008F8DF0 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B19BDB83242E3D98008F8DF0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B19BDB8A242E3EDA008F8DF0 /* Core */,
+				B19BDB8B242E3EE3008F8DF0 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B19BDB8A242E3EDA008F8DF0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B19BDB84242E3DA4008F8DF0 /* Network.swift */,
+				B19BDB88242E3DF3008F8DF0 /* NetworkTask.swift */,
+				B19BDB86242E3DC8008F8DF0 /* NetwrokError.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B19BDB8B242E3EE3008F8DF0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B19BDB8C242E3EF4008F8DF0 /* IntExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B19BDB8E242E3F31008F8DF0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B19BDB8F242E3F49008F8DF0 /* IntExtensionsTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B1BFE2A2242E08DF00C9CC97 = {
@@ -96,6 +139,7 @@
 		B1BFE2AE242E08DF00C9CC97 /* MicroNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				B19BDB83242E3D98008F8DF0 /* Sources */,
 				B19BDB7A242E09F2008F8DF0 /* SupportingFiles */,
 			);
 			path = MicroNetwork;
@@ -172,6 +216,7 @@
 				TargetAttributes = {
 					B1BFE2AB242E08DF00C9CC97 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					B1BFE2B4242E08DF00C9CC97 = {
 						CreatedOnToolsVersion = 11.4;
@@ -219,6 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19BDB85242E3DA4008F8DF0 /* Network.swift in Sources */,
+				B19BDB8D242E3EF4008F8DF0 /* IntExtensions.swift in Sources */,
+				B19BDB89242E3DF3008F8DF0 /* NetworkTask.swift in Sources */,
+				B19BDB87242E3DC8008F8DF0 /* NetwrokError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B19BDB81242E0AD9008F8DF0 /* MicroNetworkTests.swift in Sources */,
+				B19BDB90242E3F49008F8DF0 /* IntExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +415,7 @@
 		B1BFE2C1242E08DF00C9CC97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -382,6 +432,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -389,6 +440,7 @@
 		B1BFE2C2242E08DF00C9CC97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -412,6 +464,7 @@
 		B1BFE2C4242E08DF00C9CC97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MicroNetworkTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -429,6 +482,7 @@
 		B1BFE2C5242E08DF00C9CC97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MicroNetworkTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
