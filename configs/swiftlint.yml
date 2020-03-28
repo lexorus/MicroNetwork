@@ -21,6 +21,7 @@ identifier_name:
     - URL
 included:
   - ./MicroNetwork
+  - ./MicroNetworkMocks
   - ./MicroNetworkTests
 excluded:
   - ./build

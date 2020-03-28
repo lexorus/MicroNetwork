@@ -38,3 +38,5 @@ jobs:
       - name: MicroNetwork_Tests
         run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -scheme "MicroNetwork" -project "MicroNetwork.xcodeproj" -destination "${{ matrix.destination }}" -enableCodeCoverage YES clean test | xcpretty
 
+      - name: MicroNetworkMocks_Build
+        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -scheme "MicroNetworkMocks" -project "MicroNetwork.xcodeproj" -destination "${{ matrix.destination }}" | xcpretty

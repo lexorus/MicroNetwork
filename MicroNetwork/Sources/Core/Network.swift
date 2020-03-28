@@ -1,14 +1,17 @@
 import Foundation
 
-protocol Network {
+public typealias NetworkResult<T> = (Result<T, NetworkError>) -> Void
+
+public protocol Network {
     @discardableResult
     func dataTask(with url: URLRequest,
-                  completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkTask
+                  completion: @escaping NetworkResult<Data>) -> NetworkTask
 }
 
 extension URLSession: Network {
     @discardableResult
-    func dataTask(with url: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkTask {
+    public func dataTask(with url: URLRequest,
+                         completion: @escaping NetworkResult<Data>) -> NetworkTask {
         return dataTask(with: url) { (data, response, error) in
             if (error as NSError?)?.code == NSURLErrorCancelled { return }
             if let response = response as? HTTPURLResponse,
