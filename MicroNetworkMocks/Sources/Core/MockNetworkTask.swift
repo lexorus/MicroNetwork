@@ -1,12 +1,12 @@
 import Foundation
 import MicroNetwork
 
-final class MockNetworkTask: NetworkTask {
-    init() {}
+public final class MockNetworkTask: NetworkTask {
+    public init() {}
 
-    private(set) var resumeWasCalled = false
-    func resume() { resumeWasCalled = true }
+    public private(set) var resumeWasCalled = false
+    public func resume() { resumeWasCalled = true }
 
-    private(set) var cancelWasCalled = false
-    func cancel() { cancelWasCalled = true }
+    public private(set) var cancelWasCalled = false
+    public func cancel() { cancelWasCalled = true }
 }

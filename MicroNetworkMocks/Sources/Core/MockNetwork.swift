@@ -1,14 +1,14 @@
 import  Foundation
 import  MicroNetwork
 
-final class MockNetwork: Network {
-    init() {}
+public final class MockNetwork: Network {
+    public init() {}
 
-    private(set) var dataTaskURL: URLRequest?
-    private(set) var dataTaskCompletion: NetworkResult<Data>?
-    var dataTaskStub: NetworkTask = MockNetworkTask()
+    public private(set) var dataTaskURL: URLRequest?
+    public private(set) var dataTaskCompletion: NetworkResult<Data>?
+    public var dataTaskStub: NetworkTask = MockNetworkTask()
     @discardableResult
-    func dataTask(with url: URLRequest, completion: @escaping NetworkResult<Data>) -> NetworkTask {
+    public func dataTask(with url: URLRequest, completion: @escaping NetworkResult<Data>) -> NetworkTask {
         dataTaskURL = url
         dataTaskCompletion = completion
 
