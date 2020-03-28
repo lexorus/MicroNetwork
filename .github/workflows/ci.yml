@@ -6,7 +6,7 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  MicroNetwork CI:
+  CI:
     name: Test
     runs-on: macos-latest
 
@@ -32,6 +32,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: MicroNetwork Tests
+      - name: MicroNetwork_Tests
         run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -scheme "MicroNetwork" -project "MicroNetwork.xcodeproj" -destination "${{ matrix.destination }}" -enableCodeCoverage YES clean test | xcpretty
 
