@@ -1,11 +1,3 @@
-//
-//  MicroNetworkMocks.h
-//  MicroNetworkMocks
-//
-//  Created by Dmitrii Celpan on 3/28/20.
-//  Copyright © 2020 Dmitrii Celpan. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for MicroNetworkMocks.
