@@ -1,11 +1,3 @@
-//
-//  MicroNetwork.h
-//  MicroNetwork
-//
-//  Created by Dmitrii Celpan on 3/27/20.
-//  Copyright © 2020 Dmitrii Celpan. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for MicroNetwork.
