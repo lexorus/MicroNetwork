@@ -12,7 +12,7 @@ extension URLSession: Network {
     @discardableResult
     public func dataTask(with url: URLRequest,
                          completion: @escaping NetworkResult<Data>) -> NetworkTask {
-        return dataTask(with: url) { (data, response, error) in
+        let task = dataTask(with: url) { (data, response, error) in
             if (error as NSError?)?.code == NSURLErrorCancelled { return }
             if let response = response as? HTTPURLResponse,
                 !response.statusCode.isSuccessStatusCode {
@@ -22,5 +22,8 @@ extension URLSession: Network {
             guard let data = data else { return completion(.failure(.noDataError)) }
             completion(.success(data))
         }
+        task.resume()
+
+        return task
     }
 }
