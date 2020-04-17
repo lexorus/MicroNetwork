@@ -1,0 +1,14 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :bump_version do
+  	# Bump project version
+	increment_version_number(bump_type: "minor")
+	new_project_version_number = get_version_number(target: "MicroNetwork")
+	# Bump MicroNetwork.podspec version
+	new_podspec_version_number = version_bump_podspec(path: "MicroNetwork.podspec", bump_type: "minor")
+	# Bump MicroNetworkMocks.podspec version
+	new_mocks_podspec_version_number = version_bump_podspec(path: "MicroNetworkMocks.podspec", bump_type: "minor")
+  end
+end
