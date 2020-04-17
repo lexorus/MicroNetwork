@@ -1,14 +1,33 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
+
+  desc 'Bumps versions of the project targets and podspecs'
   lane :bump_version do
-  	# Bump project version
-	increment_version_number(bump_type: "minor")
-	new_project_version_number = get_version_number(target: "MicroNetwork")
-	# Bump MicroNetwork.podspec version
-	new_podspec_version_number = version_bump_podspec(path: "MicroNetwork.podspec", bump_type: "minor")
-	# Bump MicroNetworkMocks.podspec version
-	new_mocks_podspec_version_number = version_bump_podspec(path: "MicroNetworkMocks.podspec", bump_type: "minor")
+  	bump_type = 'minor'
+	increment_version_number(
+		bump_type: bump_type
+	)
+	new_project_version_number = get_version_number(
+		target: 'MicroNetwork'
+	)
+	new_mocks_project_version_number = get_version_number(
+		target: 'MicroNetworkMocks'
+	)
+	new_podspec_version_number = version_bump_podspec(
+		path: 'MicroNetwork.podspec', 
+		bump_type: bump_type
+	)
+	new_mocks_podspec_version_number = version_bump_podspec(
+		path: 'MicroNetworkMocks.podspec', 
+		bump_type: bump_type
+	)
+
+	unless new_project_version_number == new_podspec_version_number and 
+		new_project_version_number == new_mocks_podspec_version_number and 
+		new_project_version_number == new_mocks_project_version_number
+		UI.user_error!("Versions do not match!")
+	end
   end
+
 end
