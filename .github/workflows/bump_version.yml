@@ -47,7 +47,7 @@ jobs:
           title: Bump version
           assignees: lexorus
           base: ${{ env.BASE_BRANCH }}
-          branch: ${{ env.BRANCH }}
+          # branch: ${{ env.BRANCH }}
 
       - name: Delete branch
         if: failure()
