@@ -16,13 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+        with:
+          ref: ${{ github.head_ref }}
 
-      # - name: Create bump version branch
-      #   uses: peterjgrainger/action-create-branch@v1.0.0
-      #   env: 
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     branch: 'bump-version'
+      - name: Create bump version branch
+        uses: peterjgrainger/action-create-branch@v1.0.0
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'bump-version'
 
       - name: Bump version
         # fastlane is by default installed on macOS runners
@@ -36,10 +38,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Bump version
-          title: 'Bump version'
+          title: Bump version
           assignees: lexorus
-          base: 'master'
-          branch: 'bump-version'
+          base: master
 
       - name: Print created PR number
         run: |
@@ -51,4 +52,4 @@ jobs:
         uses: dawidd6/action-delete-branch@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branches: 'bump-version'
+          branches: bump-version
