@@ -26,7 +26,9 @@ jobs:
 
       - name: Bump version
         # fastlane is by default installed on macOS runners
-        run: bundle exec fastlane bump_version
+        run: |
+          bundle install
+          bundle exec fastlane bump_version
 
       - name: Create PR
         id: cpr
