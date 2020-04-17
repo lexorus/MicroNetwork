@@ -20,7 +20,7 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios bump_version
 ```
-Bumps version of the project targets and podspecs
+Bumps versions of the project targets and podspecs
 
 ----
 
