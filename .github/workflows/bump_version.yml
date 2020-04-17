@@ -39,6 +39,7 @@ jobs:
           title: 'Bump version'
           assignees: lexorus
           base: 'master'
+          branch: 'bump-version'
 
       - name: Print created PR number
         run: |
