@@ -48,7 +48,7 @@ jobs:
           commit-message: Bump version
           title: Bump version
           assignees: lexorus
-          base: ${{ env.BASE_BRANCH }}
+          # base: ${{ env.BASE_BRANCH }}
           branch: ${{ env.BRANCH }}
 
       - name: Delete branch
