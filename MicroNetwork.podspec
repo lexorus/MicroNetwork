@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         			= "MicroNetwork"
-  spec.version      			= "0.4.0"
+  spec.version      			= "0.5.0"
   spec.summary      			= "Small micro-framework with abstractions over default iOS networking"
   spec.homepage     			= "https://github.com/lexorus/MicroNetwork"
   spec.license      			= "MIT"
