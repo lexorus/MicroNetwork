@@ -20,18 +20,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
-      - name: Create bump version branch
-        uses: peterjgrainger/action-create-branch@v1.0.0
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: ${{ env.BRANCH }}
+          ref: ${{ env.BASE_BRANCH }}
 
-      - name: Checkout to bump version branch
-        uses: actions/checkout@v1
-        with:
-          ref: ${{ env.BRANCH }}
+      # - name: Create bump version branch
+      #   uses: peterjgrainger/action-create-branch@v1.0.0
+      #   env: 
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     branch: ${{ env.BRANCH }}
+
+      # - name: Checkout to bump version branch
+      #   uses: actions/checkout@v1
+      #   with:
+      #     ref: ${{ env.BRANCH }}
 
       - name: Bump version
         # fastlane is by default installed on macOS runners
@@ -47,7 +49,7 @@ jobs:
           title: Bump version
           assignees: lexorus
           base: ${{ env.BASE_BRANCH }}
-          # branch: ${{ env.BRANCH }}
+          branch: ${{ env.BRANCH }}
 
       - name: Delete branch
         if: failure()
