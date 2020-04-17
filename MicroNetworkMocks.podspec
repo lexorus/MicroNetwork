@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                     = "MicroNetworkMocks"
-  spec.version                  = "0.3.0"
+  spec.version                  = "0.4.0"
   spec.summary                  = "Mocks for MicroNetwork."
   spec.homepage                 = "https://github.com/lexorus/MicroNetwork"
   spec.license                  = "MIT"
