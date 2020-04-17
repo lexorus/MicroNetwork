@@ -32,6 +32,11 @@ jobs:
           bundle install
           bundle exec fastlane bump_version
 
+      - name: Debug commands
+        run: |
+          git show-ref
+          git name-rev HEAD
+
       - name: Create PR
         id: cpr
         uses: peter-evans/create-pull-request@v2
